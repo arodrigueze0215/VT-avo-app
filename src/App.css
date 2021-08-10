@@ -1,0 +1,43 @@
+/*Car list*/
+.cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+/*Card Item list*/
+.cardItem {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    border-radius: 4px;
+    border: 1px rgba(0,0,0,0.15) solid;
+    margin: 1em;
+    transition: box-shadow .1s ease, transform .1s ease;
+    
+}
+.cardItem:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.15);
+}
+.cardItem__img {
+    width: 300px;
+    min-height: 300px;
+    
+}
+
+.cardItem__info {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+.cardItem__info__name {
+    font-weight: 700;
+    font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+.cardItem__info__price {
+    font-size: 1em;
+    color: rgba(0,0,0,0.8);
+}
