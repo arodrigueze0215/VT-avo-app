@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 10px auto;
+    margin: 96px auto;
     justify-content: center;
 }
 
@@ -40,4 +40,53 @@
 .cardItem__info__price {
     font-size: 1em;
     color: rgba(0,0,0,0.8);
+}
+
+/*Navbar*/
+.navbar {
+    background: #fff;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+.navbar a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.95);
+}
+.navbar a:hover {
+    background: rgba(0,0,0,0.03);
+}
+.action-container {
+    display: flex;
+    justify-content: space-around;
+    max-height: 100%;
+    width: 50%;
+}
+.navbar a.active {
+    background-color: rgba(0,0,0,.03);;
+}
+.navbar a.active::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    background: 0 0;
+    margin: .5px 0 0;
+    width: .57142857em;
+    height: .57142857em;
+    border: 1px solid #d4d4d5;
+    border-top: none;
+    border-left: none;
+    z-index: 2;
+    transition: background .1s ease;
 }

@@ -1,9 +1,12 @@
+import React from 'react';
 import './App.css';
 import CardItemList from './components/CartItemList';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
-    <div className="avoApp">
+    <React.Fragment>
+      <NavBar/>
       <div className="cardList">
         <CardItemList/>
         <CardItemList/>
@@ -11,7 +14,7 @@ function App() {
         <CardItemList/>
         <CardItemList/>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
