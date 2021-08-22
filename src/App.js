@@ -6,7 +6,7 @@ import NavBar from './components/NavBar';
 function App() {
   return (
     <React.Fragment>
-      <NavBar/>
+      <NavBar basketIconActive={true}/>
       <div className="cardList">
         <CardItemList/>
         <CardItemList/>
