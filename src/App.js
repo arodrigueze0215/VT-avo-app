@@ -1,20 +1,10 @@
 import React from 'react';
 import './App.css';
-import CardItemList from './components/CartItemList';
-import NavBar from './components/NavBar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <React.Fragment>
-      <NavBar basketIconActive={true}/>
-      <div className="cardList">
-        <CardItemList/>
-        <CardItemList/>
-        <CardItemList/>
-        <CardItemList/>
-        <CardItemList/>
-      </div>
-    </React.Fragment>
+    <Home/>
   );
 }
 
