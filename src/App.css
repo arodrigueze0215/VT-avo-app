@@ -90,3 +90,101 @@
     z-index: 2;
     transition: background .1s ease;
 }
+
+/*Product Detail*/
+.container > .content-detail > .actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.actions > .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.content > h1 {
+    margin: 0;
+    font-size: 1.28em;
+}
+.description > .label {
+    display: inline-block;
+    line-height: 1;
+    background-color: #e8e8e8;
+    padding: .5em .8em;
+    font-weight: 700;
+    color: rgba(0,0,0,.6);
+    order: 0 solid transparent;
+    border-radius: .28571429rem;
+    transition: background .1s ease;
+}
+.add-basket {
+    display: flex;
+    border-radius: 0.28rem .28rem 0;
+    margin: .5rem 0 0;
+}
+.add-basket > input {
+    border-radius: .3rem;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-right-color: transparent !important;
+    border: 1px solid rgba(34,36,38,.15);
+    padding: .7em 1em;
+    line-height: 1.21em;
+    outline: 0;
+}
+.add-basket > input:focus {
+    border-color: #85b7d9;
+    background: #fff;
+    color: rgba(0,0,0,.8);
+    box-shadow: none;
+}
+
+.add-basket > button {
+    border-radius: .3rem;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-left-color: transparent !important;
+    background-color: #21ba45;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1em;
+    color: #fff;
+    padding: .7em 1.5em;
+    border: none;
+    cursor: pointer;
+}
+.container > .content-detail > .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.table-information {
+    font-size: 1em;
+    border: 1px solid rgba(34,36,38,.15);
+    margin: 1em 0;
+    border-radius: .2rem;
+    color: rgba(0,0,0,.87);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.table-information:last-child {
+    border-bottom: none
+}
+.table-information thead th {
+    cursor: auto;
+    background: #f9fafb;
+    text-align: inherit;
+    padding: .9em .7em;
+    vertical-align: inherit;
+    font-weight: 700;
+    text-transform: none;
+    border-bottom: 1px solid rgba(34,36,38,.1);
+}
+
+.table-information tbody td {
+    border-left: 1px solid rgba(34,36,38,.1);
+    padding: .7em;
+    text-align: inherit;
+    border-bottom: 1px solid rgba(34,36,38,.15);
+
+}
