@@ -7,12 +7,12 @@ const NavBar = (props) => {
     return (
         <header className="navbar">
             <div className="action-container">
-                <a href="/" className={basketIconActive ? '': 'active'}>
-                    <AvocadoIcon/>
+                <a href="/" className={basketIconActive || basketIconActive === undefined ? '' : 'active'}>
+                    <AvocadoIcon />
                     Home
-                    </a>
-                <a href="/" className={basketIconActive ? 'active': ''}>
-                    <BasketIcon/>
+                </a>
+                <a href="/" className={ basketIconActive ? 'active' : ''}>
+                    <BasketIcon />
                     Basket(0)
                 </a>
             </div>
