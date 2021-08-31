@@ -7,13 +7,15 @@ class Home extends React.Component {
         return (
             <React.Fragment>
                 <NavBar basketIconActive={false}/>
-                <div className="cardList">
-                    <CardItemList/>
-                    <CardItemList/>
-                    <CardItemList/>
-                    <CardItemList/>
-                    <CardItemList/>
-                </div>
+                <main>                    
+                    <div className="cardList">
+                        <CardItemList/>
+                        <CardItemList/>
+                        <CardItemList/>
+                        <CardItemList/>
+                        <CardItemList/>
+                    </div>
+                </main>
             </React.Fragment>
         )
     }
