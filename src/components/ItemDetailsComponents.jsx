@@ -1,10 +1,10 @@
 import React from 'react'
 export const LayoutActions = (props) => <section className="actions"> {props.children} </section>
 export const LayoutDetails = (props) => <section className="details"> {props.children} </section>
-export const Image = () => {
+export const Image = (props) => {
     return (
         <article className="image">
-            <img className="cardItem__img" src="https://produits.bienmanger.com/32677-0w470h470_Organic_Fresh_Avocados_From_Spain.jpg" alt="avo-img" />
+            <img className="cardItem__img" src={props.image} alt="avo-img" />
         </article>
     )
 }
@@ -25,39 +25,37 @@ export const ContentDescription = () => {
     )
 }
 
-export const Details = () => {
+export const Details = (props) => {
     return (
         <React.Fragment>
             <h3>About this avocado</h3>
             <p>
-                A relatively new cultivar, it was, the pretty boy baby, discovered in South Africa in the early 1990s by Mr. A.G. (Dries) Joubert.
-                Maluma Babyy.
-                It is a chance seedling of unknown parentage
+                {props.description}
             </p>
         </React.Fragment>
     )
 }
 
-export const TableInformation = () => {
+export const TableInformation = (props) => {
     return (
         <table className="table-information">
                 <thead>
                     <tr>
-                        <th colSpan="2">Title</th>
+                        <th colSpan="2">Attribures</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Shape</td>
-                        <td>Plump</td>
+                        <td>{props.shape}</td>
                     </tr>
                     <tr>
                         <td>Hardiness</td>
-                        <td>-1 C</td>
+                        <td>{props.hardiness}</td>
                     </tr>
                     <tr>
                         <td>Taste</td>
-                        <td>Superb, is an avocado</td>
+                        <td>{props.taste}</td>
                     </tr>
                 </tbody>
             </table>
