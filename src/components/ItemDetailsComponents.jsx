@@ -9,13 +9,13 @@ export const Image = (props) => {
     )
 }
 
-export const ContentDescription = () => {
+export const ContentDescription = (props) => {
     return (
         <article className="content">
-                <h1>Gwen Hass Avocado</h1>
+                <h1>{props.name}</h1>
                 <div className="description">
-                    <p>1.25</p>
-                    <div className="label">SKU: HYA78F6J</div>
+                    <p>$ {props.price}</p>
+                    <div className="label">SKU: {props.sku}</div>
                     <div className="add-basket">
                         <input type="number" value="1" min="1" step="1" />
                         <button>Add to car</button>

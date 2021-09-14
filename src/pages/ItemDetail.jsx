@@ -7,8 +7,9 @@ import {
     Details, 
     TableInformation
 } from '../components/ItemDetailsComponents'
-import LayoutNavBar from '../components/LayoutNavBar'
-export default class ItemDetail extends Component {
+
+import { withRouter } from 'react-router-dom';
+class ItemDetail extends Component {
     constructor() {
         super()
         this.state = {
@@ -27,28 +28,28 @@ export default class ItemDetail extends Component {
     }
 
     async componentDidMount() {
-        const id = 'fpr72m9k'
-        const response = await fetch(`http://localhost:3001/api/avo/${id}`)
+        const id = this.props.match.params.id
+        const response = await fetch(`https://platzi-avo.vercel.app/api/avo/${id}`)
         const data = await response.json()
-        console.group(data)
         this.setState(data)
+        console.log(data)
     }    
     render() {
         const { image, name, price, sku, attributes } =this.state;
         const { description, shape, hardiness, taste } = attributes
         return (
-            <LayoutNavBar>
-                <section className="content-detail">
-                    <LayoutActions>
-                        <Image image={image}/>
-                        <ContentDescription name={name} price={price} sku={sku}/>
-                    </LayoutActions>
-                    <LayoutDetails>
-                        <Details description={description}/>
-                        <TableInformation shape={shape} hardiness={hardiness} taste={taste}/>
-                    </LayoutDetails>
-                </section>
-            </LayoutNavBar>
+            <section className="content-detail">
+                <LayoutActions>
+                    <Image image={image}/>
+                    <ContentDescription name={name} price={price} sku={sku}/>
+                </LayoutActions>
+                <LayoutDetails>
+                    <Details description={description}/>
+                    <TableInformation shape={shape} hardiness={hardiness} taste={taste}/>
+                </LayoutDetails>
+            </section>
         )
     }
 }
+
+export default withRouter(ItemDetail)

@@ -1,20 +1,21 @@
 import React from 'react';
 import AvocadoIcon from '../assets/avo-icon'
 import BasketIcon from '../assets/basket-icon'
+import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
     const { basketIconActive } = props;
     return (
         <header className="navbar">
             <div className="action-container">
-                <a href="/" className={basketIconActive || basketIconActive === undefined ? '' : 'active'}>
+                <Link to="/" className={basketIconActive || basketIconActive === undefined ? '' : 'active'}>
                     <AvocadoIcon />
                     Home
-                </a>
-                <a href="/" className={ basketIconActive ? 'active' : ''}>
+                </Link>
+                <Link to="/basket" className={ basketIconActive ? 'active' : ''}>
                     <BasketIcon />
                     Basket(0)
-                </a>
+                </Link>
             </div>
         </header>
     )
