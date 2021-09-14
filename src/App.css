@@ -15,6 +15,7 @@
     border: 1px rgba(0,0,0,0.15) solid;
     margin: 1em;
     transition: box-shadow .1s ease, transform .1s ease;
+    text-decoration: none;
     
 }
 .cardItem:hover {
@@ -35,6 +36,7 @@
 .cardItem__info__name {
     font-weight: 700;
     font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+    color: rgba(0,0,0,0.8);
 }
 .cardItem__info__price {
     font-size: 1em;
