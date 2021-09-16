@@ -9,7 +9,7 @@ import Basket from './pages/Basket'
 function App() {
   return (
     <Router>
-      <LayoutNavBar>
+      <LayoutNavBar  basketIconActive={false}>
         <Switch>
           <Route path="/details/:id">
             <ItemDetail />
