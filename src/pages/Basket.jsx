@@ -1,19 +1,18 @@
 import React from 'react'
 import BasketItem from '../components/BasketItem'
-import LayoutNavBar from '../components/LayoutNavBar'
+import LayoutBasketItems from '../Layouts/LayoutBasketItems'
 
 export default class Basket extends React.Component {
     render() {
         return(
-            <section className="basket-container">
-                <div className="basket-item-list">
-                    <BasketItem/>
-                    <BasketItem/>
-                    <BasketItem/>
-                    <BasketItem/>
-                    <BasketItem/>                        
-                </div>
-            </section>
+            <LayoutBasketItems>
+                <BasketItem/>
+                <BasketItem/>
+                <BasketItem/>
+                <BasketItem/>
+                <BasketItem/>
+            </LayoutBasketItems>
+            
         ) 
     }
 }
