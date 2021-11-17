@@ -13,6 +13,7 @@ class ItemDetail extends Component {
     constructor() {
         super()
         this.state = {
+            amount: 1,
             name: "",
             id: "",
             sku: "",
@@ -32,8 +33,26 @@ class ItemDetail extends Component {
         const response = await fetch(`https://platzi-avo.vercel.app/api/avo/${id}`)
         const data = await response.json()
         this.setState(data)
-        console.log(data)
-    }    
+    }
+
+    handleAmountChange = ({ target }) => {
+        this.setState(Object.assign(this.state, {amount: Number(target.value)}))
+
+    }
+    
+    handleAddToBasket = () => {
+        if (this.state.id !== '') {
+            let avocado = localStorage.getItem(this.state.id)
+            if (avocado && avocado !== '{}' && avocado !== null) {
+                avocado = JSON.parse(avocado)
+                const { amount } = avocado
+                avocado.amount = Number(amount) + Number(this.state.amount)
+                localStorage.setItem(this.state.id, JSON.stringify(avocado))
+            } else {
+                localStorage.setItem(this.state.id, JSON.stringify(this.state))
+            }
+        }
+    }
     render() {
         const { image, name, price, sku, attributes } =this.state;
         const { description, shape, hardiness, taste } = attributes
@@ -41,7 +60,14 @@ class ItemDetail extends Component {
             <section className="content-detail">
                 <LayoutActions>
                     <Image image={image}/>
-                    <ContentDescription name={name} price={price} sku={sku}/>
+                    <ContentDescription 
+                        name={name} 
+                        price={price} 
+                        sku={sku} 
+                        onAddBasket={this.handleAddToBasket} 
+                        onAmountChange={this.handleAmountChange}
+                        amount={this.state.amount}
+                    />
                 </LayoutActions>
                 <LayoutDetails>
                     <Details description={description}/>
