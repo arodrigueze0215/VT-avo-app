@@ -18,7 +18,7 @@ export const ContentDescription = (props) => {
                     <div className="label">SKU: {props.sku}</div>
                     <div className="add-basket">
                         <input type="number" value={props.amount} min="1" step="1" onChange={props.onAmountChange}/>
-                        <button onClick={props.onAddBasket}>Add to car</button>
+                        <button data-id={props.id} onClick={props.onAddBasket}>Add to car</button>
                     </div>
                 </div>
             </article>

@@ -15,6 +15,7 @@ class Home extends React.Component {
         const dataFetch = await response.json()
         const { data } = dataFetch
         this.setState({ data })
+        this.props.getDataFromStorage()
     }
     render() {
         const { data } = this.state

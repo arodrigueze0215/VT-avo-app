@@ -82,17 +82,17 @@ const LinkBasket = styled(Link)`
 
 
 const NavBar = (props) => {
-    const { basketIconActive } = props
+    const { basketIconActive, amountBasket, onBasketIconActive } = props
     return (
         <Header>
             <ActionContainer>
-                <LinkHome to="/" basketIconActive={basketIconActive}>
+                <LinkHome to="/" basketIconActive={basketIconActive} onClick={onBasketIconActive} id="home">
                     <AvocadoIcon />
                     Home
                 </LinkHome>
-                <LinkBasket to="/basket" basketIconActive={basketIconActive}>
+                <LinkBasket to="/basket" basketIconActive={basketIconActive} onClick={onBasketIconActive} id="basket">
                     <BasketIcon />
-                    Basket(0)
+                    {`Basket ( ${amountBasket} )`}
                 </LinkBasket>
             </ActionContainer>
         </Header>
