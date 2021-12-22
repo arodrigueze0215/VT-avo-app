@@ -48,25 +48,28 @@ class ItemDetail extends Component {
                 const { amount } = avocado
                 avocado.amount = Number(amount) + Number(this.state.amount)
                 localStorage.setItem(this.state.id, JSON.stringify(avocado))
+                this.props.onIncreaseAmount(amount)
             } else {
                 localStorage.setItem(this.state.id, JSON.stringify(this.state))
+                this.props.onIncreaseAmount(this.state.amount)
             }
         }
     }
     render() {
-        const { image, name, price, sku, attributes } =this.state;
+        const { id, image, name, price, sku, attributes, amount } =this.state;
         const { description, shape, hardiness, taste } = attributes
         return (
             <section className="content-detail">
                 <LayoutActions>
                     <Image image={image}/>
                     <ContentDescription 
+                        id={id}
                         name={name} 
                         price={price} 
                         sku={sku} 
                         onAddBasket={this.handleAddToBasket} 
                         onAmountChange={this.handleAmountChange}
-                        amount={this.state.amount}
+                        amount={amount}
                     />
                 </LayoutActions>
                 <LayoutDetails>
